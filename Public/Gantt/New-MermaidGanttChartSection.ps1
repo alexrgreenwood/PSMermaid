@@ -7,12 +7,12 @@ function New-MermaidGanttChartSection {
     
     begin {
         $output = [System.Text.StringBuilder]::new()
-        $output.Append("`tsection $Title`n")  | Out-Null
+        $output.Append(" section $Title`n")  | Out-Null
     }
     
     process {
         foreach($EventElement in $Events){
-            $output.AppendLine("`t`t$EventElement`n") | Out-Null
+            $output.AppendLine("  $EventElement") | Out-Null
         }
     }
     
